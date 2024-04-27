@@ -26,5 +26,8 @@ module.exports = {
     indent: ['error', 2],
     semi: ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
+    'object-curly-spacing': ['error', 'always', {
+      arraysInObjects: false,
+    }],
   },
 };
