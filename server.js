@@ -1,7 +1,7 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-import morgan from 'morgan';
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import morgan from "morgan";
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config({
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
-  res.status(200).json({ message: 'Hello World' });
+res.status(200).json({ message: 'Hello World' });
 });
 
 app.use('*', (req, res) => {
