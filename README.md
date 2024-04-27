@@ -2,6 +2,8 @@
 
 Este es un proyecto de una aplicación web desarrollada con React en el frontend y Node.js con Express en el backend, utilizando MongoDB como base de datos. La aplicación permite a los usuarios crear, leer, actualizar y eliminar tareas, así como marcarlas como completadas o incompletas.
 
+este es el [demo de la aplicacion](https://almacenadora-kinal-fr-6406c0b91a72.herokuapp.com/), y aqui esta la [API en deploy](https://almacenadora-kinal-backend-a1957ef7f11d.herokuapp.com/) tambien.
+
 ## Estructura del Proyecto
 
 El proyecto está dividido en dos partes principales:
