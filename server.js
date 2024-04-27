@@ -1,11 +1,27 @@
 import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import morgan from 'morgan';
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config({
+    path: ['.env', '.env.example'],
+  });
+}
+const { PORT } = process.env;
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+app.use(cors());
+app.use(express.json());
+app.use(morgan('dev'));
 
-app.get('/', () => {
-  console.log('Hello World');
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Hello World' });
+});
+
+app.use('*', (req, res) => {
+  res.status(404).json({ message: 'Endpoint not found' });
 });
 
 app.listen(PORT, () => {
