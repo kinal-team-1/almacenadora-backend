@@ -4,7 +4,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "preinstall": "node -e \"const fs = require('fs'); if (fs.existsSync('.git')) { require('child_process').execSync('git config core.hooksPath hooks'); }\"",
+    "preinstall": "node -e \"const fs = require('fs'); if (fs.existsSync('.git')) { require('child_process').execSync('git config core.hooksPath git-hooks'); }\"",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "lint": "eslint .",
