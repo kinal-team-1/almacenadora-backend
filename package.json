@@ -1,0 +1,31 @@
+{
+  "name": "almacenadora-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.3.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
+  }
+}
