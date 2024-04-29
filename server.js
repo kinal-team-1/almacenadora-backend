@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
+import taskRoutes from './src/route/task.routes';
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config({
@@ -19,6 +20,8 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello World' });
 });
+
+app.use('/api/task', taskRoutes);
 
 app.use('*', (req, res) => {
   res.status(404).json({ message: 'Endpoint not found' });
