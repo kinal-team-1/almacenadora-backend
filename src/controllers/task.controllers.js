@@ -1,5 +1,5 @@
-import Task from '../models/task.model';
-import cleanObject from '../utils/clean-object';
+import Task from '../models/task.model.js';
+import cleanObject from '../utils/clean-object.js';
 
 const MESSAGES = {
   INTERNAL_ERROR: 'Internal Server error',

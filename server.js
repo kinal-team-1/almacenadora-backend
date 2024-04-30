@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
-import taskRoutes from './src/route/task.routes';
+import taskRoutes from './src/route/task.routes.js';
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config({
