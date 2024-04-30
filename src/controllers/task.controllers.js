@@ -1,5 +1,5 @@
-import Task from '../models/task.model';
-import cleanObject from '../utils/clean-object';
+import Task from '../models/task.model.js';
+import cleanObject from '../utils/clean-object.js';
 
 const MESSAGES = {
   INTERNAL_ERROR: 'Internal Server error',
@@ -8,7 +8,7 @@ const MESSAGES = {
 
 export const getAllTasks = async (req, res) => {
   try {
-    const { limit, page } = req.query();
+    const { limit, page } = req.query;
 
     const [total, data] = await Promise.all([
       Task.countDocuments(),

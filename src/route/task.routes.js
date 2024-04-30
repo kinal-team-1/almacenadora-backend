@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import { body, param, query } from 'express-validator';
+import validateChecks from '../middlewares/validate-checks.js';
 import {
   createTask,
   deleteTaskById,
   getAllTasks,
   getTaskById,
   updateTaskById,
-} from '../controllers/task.controllers';
+} from '../controllers/task.controllers.js';
 
 const router = Router();
 
@@ -24,6 +25,7 @@ router
         .optional()
         .isInt()
         .withMessage('if query param `page` is present, it must be an integer'),
+      validateChecks,
     ],
     getAllTasks,
   )
@@ -59,6 +61,7 @@ router
         .withMessage(
           'If field `label` is provided, it must be a valid MongoDB ObjectId',
         ),
+      validateChecks,
     ],
     createTask,
   );
@@ -70,6 +73,7 @@ router
       param('id')
         .isMongoId()
         .withMessage('The task ID must be a valid MongoDB ObjectId'),
+      validateChecks,
     ],
     getTaskById,
   )
@@ -116,6 +120,7 @@ router
         .withMessage(
           'If field `label` is provided, it must be a valid MongoDB ObjectId',
         ),
+      validateChecks,
     ],
     updateTaskById,
   )
@@ -124,6 +129,7 @@ router
       param('id')
         .isMongoId()
         .withMessage('The task ID must be a valid MongoDB ObjectId'),
+      validateChecks,
     ],
     deleteTaskById,
   );
