@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { body, param, query } from 'express-validator';
-import validateChecks from '../middlewares/validate-checks.js';
+import { validateChecks } from '../middlewares/validate-checks.js';
 import {
   createTask,
   deleteTaskById,
