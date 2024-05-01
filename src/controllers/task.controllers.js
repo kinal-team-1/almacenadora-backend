@@ -99,9 +99,9 @@ export const updateTaskById = async (req, res) => {
       date_start,
       date_end,
       label,
-    } = req.body();
+    } = req.body;
 
-    const task = Task.findByIdAndUpdate(
+    const task = await Task.findByIdAndUpdate(
       id,
       cleanObject({
         title,
@@ -115,7 +115,7 @@ export const updateTaskById = async (req, res) => {
       }),
       { new: true },
     );
-
+    
     if (!task) {
       return res.status(404).json({
         message: MESSAGES.NOT_FOUND,

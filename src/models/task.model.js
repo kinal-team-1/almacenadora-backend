@@ -21,7 +21,6 @@ const TaskSchema = new Schema({
   },
   last_updated_at: {
     type: Date,
-    required: true,
   },
   date_start: {
     type: Date,
