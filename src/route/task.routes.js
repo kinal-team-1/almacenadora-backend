@@ -61,6 +61,24 @@ router
         .withMessage(
           'If field `label` is provided, it must be a valid MongoDB ObjectId',
         ),
+        body('isDone')
+        .optional()
+        .isBoolean()
+        .withMessage('If field `isDone` is provided, it must be a boolean'),
+        body('user_name')
+        .isString()
+        .withMessage('The field `user_name` is required and must be a string')
+        .isLength({ min: 1, max: 50 })
+        .withMessage(
+          'The field `user_name` is required and must be between 1 and 50 characters',
+        ),
+      body('user_lastname')
+        .isString()
+        .withMessage('The field `user_lastname` is required and must be a string')
+        .isLength({ min: 1, max: 50 })
+        .withMessage(
+          'The field `user_lastname` is required and must be between 1 and 50 characters',
+        ),
       validateChecks,
     ],
     createTask,
