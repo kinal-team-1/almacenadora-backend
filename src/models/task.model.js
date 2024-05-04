@@ -32,6 +32,7 @@ const TaskSchema = new Schema({
   },
   label: {
     type: Schema.Types.ObjectId,
+    ref: 'Label',
   },
   user_name: {
     type: String,

@@ -14,7 +14,8 @@ export const getAllTasks = async (req, res) => {
       Task.countDocuments(),
       Task.find()
         .skip(Number(limit) * Number(page))
-        .limit(Number(limit)),
+        .limit(Number(limit))
+        .populate('label'),
     ]);
 
     return res.json({
@@ -71,7 +72,7 @@ export const getTaskById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const task = await Task.findById(id);
+    const task = await Task.findById(id).populate('label');
 
     if (!task) {
       return res.status(404).json({ message: MESSAGES.NOT_FOUND });
@@ -114,7 +115,7 @@ export const updateTaskById = async (req, res) => {
         label,
       }),
       { new: true },
-    );
+    ).populate('label');
     
     if (!task) {
       return res.status(404).json({
@@ -136,7 +137,7 @@ export const deleteTaskById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const task = await Task.findByIdAndDelete(id);
+    const task = await Task.findByIdAndDelete(id).populate('label');
     if (!task) {
       return res.status(404).json({
         message: MESSAGES.NOT_FOUND,
