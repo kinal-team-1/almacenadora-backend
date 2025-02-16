@@ -29,5 +29,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'always', {
       arraysInObjects: false,
     }],
+    camelcase: 'off',
+    'import/extensions': ['error','always'],
   },
 };
